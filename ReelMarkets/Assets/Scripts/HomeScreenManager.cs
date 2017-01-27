@@ -11,18 +11,22 @@ public class HomeScreenManager : MonoBehaviour {
 	}
 
 	public void onInternationalPress () {
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene (0);//not active
 	}
 
 	public void onComedyPress() {
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene (0);//not active
 	}
 
 	public void onHorrorPress () {
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene (0);//not active
 	}
 
 	public void onActionPress () {
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene (0);//not active
+	}
+
+	public void onProfilePress () {
+		SceneManager.LoadScene (3);
 	}
 }
