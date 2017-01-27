@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using UserItems;
 using LoadScene;
+using UnityEngine.SceneManagement;
 
 public class Login : MonoBehaviour {
     public static User currentUser; 
@@ -12,7 +13,6 @@ public class Login : MonoBehaviour {
     private string inputPassword;
     public InputField username;
     public InputField password;
-    public UserManager usermanager = new UserManager();
 
 	// Use this for initialization
 	void Start () {
@@ -27,22 +27,25 @@ public class Login : MonoBehaviour {
 
     public void LoginButton()
     {
+        Debug.Log("Attempting to login. . .");
         bool isValid = (inputUsername != null && inputPassword != null 
             && !inputUsername.Equals("") && !inputPassword.Equals(""));
-        if (isValid && usermanager.isExistingUser(inputUsername))
+        if (isValid && UserManager.isExistingUser(inputUsername))
         {
-            User userInfo = usermanager.getUser(inputUsername);
+            User userInfo = UserManager.getUser(inputUsername);
             if (userInfo != null && userInfo.Password.Equals(inputPassword)) {
                 currentUser = userInfo;
-                //LoadSceneOnClick.LoadByIndex(2);
-                Debug.Log("Login worked"); 
+                Debug.Log("Login worked");
+                SceneManager.LoadScene(2);
             } else
             {
-                Debug.Log("Invalid login"); //wrong password
+                Debug.Log("Invalid login: wrong password"); //wrong password
+                Debug.Log("attempted pass: " + inputPassword);
+                Debug.Log("actual pass: " + userInfo.Password);
             }
         } else
         {
-            Debug.Log("Invalid login"); //fields blank or username does not exist
+            Debug.Log("Invalid login: fields blank or username doesn't exist"); //fields blank or username does not exist
         }
         // else user doesn't exist
     }

@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 17210349}
   - component: {fileID: 17210348}
   - component: {fileID: 17210347}
-  - component: {fileID: 17210350}
   m_Layer: 5
   m_Name: Username
   m_TagString: Untagged
@@ -226,19 +225,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 17210345}
---- !u!114 &17210350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 17210345}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ab4e80785db3c40a6d704f6da27fba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  username: {fileID: 0}
-  password: {fileID: 0}
 --- !u!1 &503058619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1024,6 @@ GameObject:
   - component: {fileID: 1529076185}
   - component: {fileID: 1529076187}
   - component: {fileID: 1529076186}
-  - component: {fileID: 1529076188}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1101,19 +1086,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1529076184}
---- !u!114 &1529076188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1529076184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ab4e80785db3c40a6d704f6da27fba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  username: {fileID: 17210347}
-  password: {fileID: 1276304814}
 --- !u!1 &1916149393
 GameObject:
   m_ObjectHideFlags: 0

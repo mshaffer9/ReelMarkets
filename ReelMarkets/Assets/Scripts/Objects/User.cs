@@ -5,7 +5,7 @@ using UnityEngine;
 namespace UserItems {
     public class User
     {
-        public enum Gender { MALE, FEMALE };
+        public enum Gender { MALE, FEMALE, NONE };
         public enum AccountType { USER, MODERATOR, ADMIN };
 
         public string Username { get; set; }
