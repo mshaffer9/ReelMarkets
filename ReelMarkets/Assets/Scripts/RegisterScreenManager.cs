@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UserItems;
+using ErrorScenes;
+
 public class RegisterScreenManager : MonoBehaviour {
 
     //holding info in variables, put in database at the very end
@@ -14,7 +16,7 @@ public class RegisterScreenManager : MonoBehaviour {
 
     private bool passwordError = false;
 
-    public GameObject passErrorPanel;
+    public ErrorPanelManager errorPanel;
 
     public void Update()
     {
@@ -23,6 +25,7 @@ public class RegisterScreenManager : MonoBehaviour {
     //User's info will be put in database, and they will be re-routed to log in
     public void onRegisterPressed()
     {
+        errorPanel = ErrorPanelManager.Instance();
         Debug.Log("ATTEMPTING TO REGISTER ACCOUNT . . .");
 
         bool isValid = (userName != null && userName != null
@@ -33,13 +36,14 @@ public class RegisterScreenManager : MonoBehaviour {
 
         if (passwordError)
         {
-            passErrorPanel.SetActive(true);
+            errorPanel.displayError("Error:\nPassword's do not match!");
             Debug.Log("Passwords do not match");
         }
         else
         {
             if (!isValid)
             {
+                errorPanel.displayError("Error:\nFields cannot be blank.");
                 Debug.Log("Fields cannot be blank.");
             }
             else
@@ -47,6 +51,7 @@ public class RegisterScreenManager : MonoBehaviour {
                 if (UserManager.isExistingUser(userName))
                 {
                     // throw error panel that user exists
+                    errorPanel.displayError("Error:\nUsername already exists. Please choose a different one.");
                     Debug.Log("Username already exists.");
                 }
                 else
@@ -62,8 +67,6 @@ public class RegisterScreenManager : MonoBehaviour {
                     {
                         g = User.Gender.FEMALE;
                     }
-                    Debug.Log("username: " + userName);
-                    Debug.Log("password: " + userPassword);
                     User newUser = new User(userName, userPassword, userEmail, userDOB, g, User.AccountType.USER);
                     UserManager.addNewUser(newUser);
                     Debug.Log("SUCCESS! Created new User!");
@@ -119,9 +122,4 @@ public class RegisterScreenManager : MonoBehaviour {
         }
     }
 
-    //closes the error popup when a password error is present
-    public void okErrorPressed()
-    {
-        passErrorPanel.SetActive(false);
-    }
 }
