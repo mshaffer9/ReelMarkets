@@ -50,7 +50,7 @@ namespace ErrorScenes
         public void okErrorPressed()
         {
             errorPanel.SetActive(false);
-            if (this.okErrorPressedFunction != null) this.okErrorPressedFunction();
+            this.okErrorPressedFunction.Invoke();
         }
 
         public void assignErrorPressed(ErrorMethod e)

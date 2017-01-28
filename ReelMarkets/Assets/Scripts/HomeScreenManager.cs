@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Session;
+using ErrorScenes;
 
 public class HomeScreenManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    public ErrorPanelManager errorPanel;
+
+
+    // Use this for initialization
+    void Start () {
+		if (LoginSession.currentUser == null)
+        {
+            errorPanel = ErrorPanelManager.Instance();
+            errorPanel.assignErrorPressed(returnToLogin);
+            errorPanel.displayError("Login Error\nTry again");
+            
+        }
 	}
 
 	public void onInternationalPress () {
@@ -29,4 +40,9 @@ public class HomeScreenManager : MonoBehaviour {
 	public void onProfilePress () {
 		SceneManager.LoadScene (3);
 	}
+
+    private void returnToLogin()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

@@ -7,9 +7,9 @@ using UserItems;
 using LoadScene;
 using UnityEngine.SceneManagement;
 using ErrorScenes;
+using Session;
 
 public class Login : MonoBehaviour {
-    public static User currentUser; 
     private string inputUsername;
     private string inputPassword;
     public InputField username;
@@ -38,7 +38,7 @@ public class Login : MonoBehaviour {
         {
             User userInfo = UserManager.getUser(inputUsername);
             if (userInfo != null && userInfo.Password.Equals(inputPassword)) {
-                currentUser = userInfo;
+                LoginSession.currentUser = userInfo;
                 Debug.Log("Login worked");
                 SceneManager.LoadScene(2);
             } else
