@@ -28,3 +28,13 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#Andriod Studio files
+*.iml
+/ReelMarkets_AndroidStudio/*.gradle
+/ReelMarkets_AndroidStudio/local.properties
+/ReelMarkets_AndroidStudio/.idea/workspace.xml
+/ReelMarkets_AndroidStudio/.idea/libraries
+/ReelMarkets_AndroidStudio/*.DS_Store
+/ReelMarkets_AndroidStudio/build
+/ReelMarkets_AndroidStudio/captures
