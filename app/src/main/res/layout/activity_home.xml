@@ -14,9 +14,9 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_menu_manage"
+
         android:id="@+id/imageButton"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onClickSwitchToProfile" />
+        android:onClick="onClickSwitchToProfile"
+        android:src="@android:drawable/stat_notify_sync" />
 </RelativeLayout>
