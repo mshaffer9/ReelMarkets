@@ -15,8 +15,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <ImageView
             android:layout_width="match_parent"
@@ -28,24 +28,40 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp">
+            android:layout_marginTop="150dp"
+            android:weightSum="1">
 
-            <EditText
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/etUsername"
-                android:hint="Username"
-                android:paddingBottom="30dp" />
+                android:layout_height="106dp"
+                android:background="@drawable/loginShadowbox"
+                android:layout_weight="0.43">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/etPassword"
-                android:hint="Password" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/etUsername"
+                    android:hint="Username"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="50dp"
+                    android:paddingTop="0dp"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:ems="10"
+                    android:id="@+id/etPassword"
+                    android:hint="Password"
+                    android:paddingLeft="50dp"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
             <Button
                 android:text="Button"
@@ -55,7 +71,10 @@
                 tools:text="Login"
                 android:background="@drawable/loginButton"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/background_light"
+                android:textSize="30sp" />
 
         </LinearLayout>
 
@@ -71,7 +90,7 @@
             android:text="TextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvForgotPass"
+            android:id="@+id/textView5"
             tools:text="Forgot your password?" />
     </LinearLayout>
 
