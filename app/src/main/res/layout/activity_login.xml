@@ -35,32 +35,34 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="106dp"
-                android:background="@drawable/loginShadowbox"
+                android:background="@drawable/loginshadowbox"
                 android:layout_weight="0.43">
 
                 <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:id="@+id/etUsername"
                     android:hint="Username"
                     android:paddingBottom="0dp"
-                    android:paddingLeft="50dp"
+                    android:paddingLeft="0dp"
                     android:paddingTop="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginLeft="50dp" />
 
                 <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:inputType="textPassword"
                     android:ems="10"
                     android:id="@+id/etPassword"
                     android:hint="Password"
-                    android:paddingLeft="50dp"
+                    android:paddingLeft="0dp"
                     android:paddingBottom="0dp"
                     android:paddingTop="0dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginLeft="50dp" />
             </LinearLayout>
 
             <Button
@@ -69,7 +71,7 @@
                 android:layout_height="67dp"
                 android:id="@+id/loginButton"
                 tools:text="Login"
-                android:background="@drawable/loginButton"
+                android:background="@drawable/loginbutton"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
