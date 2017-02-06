@@ -83,11 +83,15 @@
     <Button
         android:text="Register"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="67dp"
         android:id="@+id/btRegister"
+        android:background="@drawable/loginbutton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="95dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
         android:onClick="onClickRegister" />
 
 </RelativeLayout>

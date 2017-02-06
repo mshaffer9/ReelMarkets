@@ -66,7 +66,7 @@
             </LinearLayout>
 
             <Button
-                android:text="Button"
+                android:text="Login"
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:id="@+id/loginButton"
@@ -76,20 +76,22 @@
                 android:layout_marginBottom="20dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:onClick="onClickConfirmLogin" />
 
         </LinearLayout>
 
         <TextView
-            android:text="TextView"
+            android:text="Don't have an account yet? Sign up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvRegister"
             tools:text="Don't have an account yet? Sign up"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:onClick="onClickSwitchToRegister"/>
 
         <TextView
-            android:text="TextView"
+            android:text="Forgot your password?"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView5"
