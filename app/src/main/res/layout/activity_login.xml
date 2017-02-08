@@ -35,34 +35,66 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="106dp"
-                android:background="@drawable/loginshadowbox"
                 android:layout_weight="0.43">
 
-                <EditText
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/etUsername"
-                    android:hint="Username"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="0dp"
-                    android:paddingTop="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="50dp" />
+                    android:layout_weight="1">
 
-                <EditText
-                    android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="47dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/personicon"
+                        android:id="@+id/imageView2"
+                        android:scaleType="fitCenter" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/etUsername"
+                        android:hint="Username"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="0dp"
+                        android:paddingTop="8dp"
+                        android:layout_weight="1"
+                        android:textColor="#55c7e4"
+                        android:textColorHint="#55c7e4" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:inputType="textPassword"
-                    android:ems="10"
-                    android:id="@+id/etPassword"
-                    android:hint="Password"
-                    android:paddingLeft="0dp"
-                    android:paddingBottom="0dp"
-                    android:paddingTop="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="50dp" />
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="39dp"
+                        android:layout_height="36dp"
+                        app:srcCompat="@drawable/lock"
+                        android:id="@+id/imageView3"
+                        android:scaleType="fitCenter"
+                        android:layout_weight="0.09" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:inputType="textPassword"
+                        android:ems="10"
+                        android:id="@+id/etPassword"
+                        android:hint="Password"
+                        android:paddingLeft="0dp"
+                        android:paddingBottom="0dp"
+                        android:paddingTop="0dp"
+                        android:layout_weight="1"
+                        android:textColor="#55c7e4"
+                        android:textColorHint="#55c7e4" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <Button
@@ -81,21 +113,41 @@
 
         </LinearLayout>
 
-        <TextView
-            android:text="Don't have an account yet? Sign up"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvRegister"
-            tools:text="Don't have an account yet? Sign up"
-            android:layout_marginBottom="10dp"
-            android:onClick="onClickSwitchToRegister"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Don't have an account yet?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                tools:text="Don't have an account yet?"
+                android:layout_marginBottom="10dp"
+                android:textColor="#ff499b"
+                android:textStyle="normal|bold"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="Sign up."
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvRegister"
+                android:onClick="onClickSwitchToRegister"
+                tools:text="Sign up."
+                android:textColor="#aa409b"
+                android:textStyle="normal|bold" />
+        </LinearLayout>
 
         <TextView
             android:text="Forgot your password?"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView5"
-            tools:text="Forgot your password?" />
+            tools:text="Forgot your password?"
+            android:textColor="#ff499b"
+            android:textStyle="normal|bold" />
     </LinearLayout>
 
 </RelativeLayout>
