@@ -19,17 +19,11 @@
         <activity android:name=".controller.HomeActivity" />
         <activity android:name=".controller.UserProfileActivity" />
         <activity
-            android:name=".controller.PollCreationActivity"
-            android:label="@string/title_activity_poll_creation"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".controller.ShowPageActivity"
             android:label="@string/title_activity_show_page"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".controller.PollActivity"
-            android:label="@string/title_activity_poll"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".controller.PollCreationActivity" />
+        <activity android:name=".controller.PollActivity"></activity>
     </application>
 
 </manifest>

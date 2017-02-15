@@ -12,7 +12,7 @@ public class PollManager {
 
     private static void initMap() {
         pollMap = new HashMap<>();
-        // add some defailt polls here
+        // add some default polls here
     }
 
     public static void addNewPoll(Poll poll)

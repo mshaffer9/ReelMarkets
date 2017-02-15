@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
         spinner.setAdapter(arrayAdapter);
     }
 
-    void onClickRegister(View v) {
+    public void onClickRegister(View v) {
         String username = ((EditText)findViewById(R.id.etRegisterUser)).getText().toString();
         String email = ((EditText)findViewById(R.id.etEmail)).getText().toString();
         String pass = ((EditText)findViewById(R.id.etRegisterPass)).getText().toString();

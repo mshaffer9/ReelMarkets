@@ -10,13 +10,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cmdev.reelmarkets.controller.RegisterActivity">
 
+    <Button
+        android:text="Register"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:id="@+id/btRegister"
+        android:background="@drawable/loginbutton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="95dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        android:onClick="onClickRegister" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:weightSum="1"
-        android:id="@+id/createAccount">
+        android:id="@+id/createAccount"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:text="Create Account"
@@ -79,19 +94,5 @@
             android:hint="Confirm Password" />
 
     </LinearLayout>
-
-    <Button
-        android:text="Register"
-        android:layout_width="match_parent"
-        android:layout_height="67dp"
-        android:id="@+id/btRegister"
-        android:background="@drawable/loginbutton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="95dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@android:color/background_light"
-        android:textSize="30sp"
-        android:onClick="onClickRegister" />
 
 </RelativeLayout>

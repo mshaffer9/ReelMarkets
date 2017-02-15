@@ -1,6 +1,7 @@
 package com.cmdev.reelmarkets.model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -12,15 +13,6 @@ public class Poll {
     public enum PollType { SERIES, SEASON, EPISODE };
 
     private PollType pollType;
-    private int currency;
-
-    public int getPid() {
-        return pid;
-    }
-
-    public void setPid(int pid) {
-        this.pid = pid;
-    }
 
     private int pid;
     private String pollName, genre;
@@ -28,23 +20,31 @@ public class Poll {
     private String startDate, endDate;
 
     private String showName;
-    private int season, episode;
+    private int season;
+    private int episode;
+
+    private int series_id;
+    private List<String> options;
 
     /**
      * Constructor with defailt poll type as series
      * @param pollName
      * @param pollAuthor
-     * @param currency
      * @param startDate
      * @param endDate
      */
-    public Poll(String pollName, String pollAuthor, int currency, String startDate, String endDate){
-        new Poll(pollName, pollAuthor, currency, startDate, endDate, PollType.SERIES);
+    public Poll(String pollName, int pid, String pollAuthor, String startDate, String endDate){
+        new Poll(pollName, pid, pollAuthor, startDate, endDate, PollType.SERIES, options);
     }
 
-    public Poll(String pollName, String pollAuthor, int currency, String startDate, String endDate, PollType pollType){
+    public Poll(String pollName, int pid, String pollAuthor, String startDate, String endDate, PollType pollType, List<String> options){
         this.pollName = pollName;
+        this.pid = pid;
         this.pollAuthor = pollAuthor;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.pollType = pollType;
+        this.options = options;
 
     }
 
@@ -56,12 +56,12 @@ public class Poll {
         this.pollType = pollType;
     }
 
-    public int getCurrency() {
-        return currency;
+    public int getPid() {
+        return pid;
     }
 
-    public void setCurrency(int currency) {
-        this.currency = currency;
+    public void setPid(int pid) {
+        this.pid = pid;
     }
 
     public String getPollName() {
@@ -124,10 +124,14 @@ public class Poll {
         return episode;
     }
 
-    public void setEpisode(int episode) {
-        this.episode = episode;
-    }
+    public void setEpisode(int episode) { this.episode = episode; }
 
+    public int getSeries_id() { return series_id; }
 
+    public void setSeries_id(int series_id) { this.series_id = series_id; }
+
+    public List<String> getOptions() { return options; }
+
+    public void setOptions(List<String> options) { this.options = options; }
 
 }
