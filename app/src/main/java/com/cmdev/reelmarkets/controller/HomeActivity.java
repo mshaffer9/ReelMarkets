@@ -14,6 +14,10 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Button actionB = (Button) findViewById(R.id.btAction); //setOnClickListeners
+        Button comedyB = (Button) findViewById(R.id.btComedy);
+        Button horrorB = (Button) findViewById(R.id.btHorror);
+        Button internatB = (Button) findViewById(R.id.btInternat);
     }
 
     public void onClickSwitchToProfile(View v) {
@@ -24,7 +28,4 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), PollCreationActivity.class));
     }
 
-    public void onClickSwitchToCrime(View v) { //TODO: create genre page and backend stuff
-        startActivity(new Intent(getApplicationContext(), PollCreationActivity.class));
-    }
 }
