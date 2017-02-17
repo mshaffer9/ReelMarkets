@@ -121,12 +121,16 @@ public class PollCreationActivity extends AppCompatActivity {
     }
 
     private void updateTimeDisplay(TextView timeDisplay, Calendar time) {
-        timeDisplay.setText(
-                new StringBuilder()
-                        // Month is 0 based so add 1
-                        .append(time.get(Calendar.HOUR)).append(":")
-                        .append(time.get(Calendar.MINUTE)));
-
+        StringBuilder setTime = new StringBuilder()
+                .append(time.get(Calendar.HOUR)).append(":")
+                .append(time.get(Calendar.MINUTE));
+        int AMorPM = time.get(Calendar.AM_PM);
+        if(AMorPM == 0) {
+            setTime.append(" AM");
+        } else {
+            setTime.append(" PM");
+        }
+        timeDisplay.setText(setTime);
     }
 
     private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -173,7 +177,7 @@ public class PollCreationActivity extends AppCompatActivity {
                 return new TimePickerDialog(this, timeSetListener,
                         activeTime.get(Calendar.HOUR),
                         activeTime.get(Calendar.MINUTE),
-                        true);
+                        false);
         }
         return null;
     }
@@ -233,7 +237,7 @@ public class PollCreationActivity extends AppCompatActivity {
                     "Please complete all fields!", Toast.LENGTH_LONG).show();
         }  else if (!hasValidDates) {
             Toast.makeText(getApplicationContext(),
-                    "Start date must be before end date!", Toast.LENGTH_LONG).show();
+                    "End Date must be after Start Date!", Toast.LENGTH_LONG).show();
         } else if (!hasOptions) {
             Toast.makeText(getApplicationContext(),
                     "Polls must have at least 2 options!", Toast.LENGTH_LONG).show();
