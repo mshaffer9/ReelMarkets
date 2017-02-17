@@ -1,12 +1,14 @@
 package com.cmdev.reelmarkets.controller;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cmdev.reelmarkets.R;
@@ -29,6 +31,14 @@ public class RegisterActivity extends AppCompatActivity {
                 android.R.layout.simple_dropdown_item_1line, genderOptions);
         Spinner spinner = (Spinner) findViewById(R.id.gender);
         spinner.setAdapter(arrayAdapter);
+
+        //BELOW IS HOW TO DO THE FONT THING YAY
+        //Gets the font
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(),"SciFly-Sans.ttf");
+        //Gets the TextView whose font we wanna change
+        TextView registerUser = (TextView) findViewById(R.id.etRegisterUser);
+        //Sets the TextView's font
+        registerUser.setTypeface(myTypeface);
     }
 
     public void onClickRegister(View v) {

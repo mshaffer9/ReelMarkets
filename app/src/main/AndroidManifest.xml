@@ -18,6 +18,7 @@
         <activity android:name=".controller.RegisterActivity" />
         <activity android:name=".controller.HomeActivity" />
         <activity android:name=".controller.UserProfileActivity" />
+        <activity android:name=".controller.UserListActivity" />
         <activity
             android:name=".controller.ShowPageActivity"
             android:label="@string/title_activity_show_page"
