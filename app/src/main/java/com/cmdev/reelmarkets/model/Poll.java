@@ -1,5 +1,6 @@
 package com.cmdev.reelmarkets.model;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -17,7 +18,7 @@ public class Poll {
     private int pid;
     private String pollName, genre;
     private String pollAuthor;
-    private String startDate, endDate;
+    private Calendar startDate, endDate;
 
     private String showName;
     private int season;
@@ -33,11 +34,11 @@ public class Poll {
      * @param startDate
      * @param endDate
      */
-    public Poll(String pollName, int pid, String pollAuthor, String startDate, String endDate){
+    public Poll(String pollName, int pid, String pollAuthor, Calendar startDate, Calendar endDate){
         new Poll(pollName, pid, pollAuthor, startDate, endDate, PollType.SERIES, options);
     }
 
-    public Poll(String pollName, int pid, String pollAuthor, String startDate, String endDate, PollType pollType, List<String> options){
+    public Poll(String pollName, int pid, String pollAuthor, Calendar startDate, Calendar endDate, PollType pollType, List<String> options){
         this.pollName = pollName;
         this.pid = pid;
         this.pollAuthor = pollAuthor;
@@ -88,19 +89,19 @@ public class Poll {
         this.pollAuthor = pollAuthor;
     }
 
-    public String getStartDate() {
+    public Calendar getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Calendar startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public Calendar getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Calendar endDate) {
         this.endDate = endDate;
     }
 

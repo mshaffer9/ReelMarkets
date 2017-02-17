@@ -23,4 +23,8 @@ public class HomeActivity extends AppCompatActivity {
     public void onClickSwitchToPollCreation(View v) {
         startActivity(new Intent(getApplicationContext(), PollCreationActivity.class));
     }
+
+    public void onClickSwitchToCrime(View v) { //TODO: create genre page and backend stuff
+        startActivity(new Intent(getApplicationContext(), PollCreationActivity.class));
+    }
 }

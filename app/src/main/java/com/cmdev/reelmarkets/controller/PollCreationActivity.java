@@ -1,14 +1,20 @@
 package com.cmdev.reelmarkets.controller;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.cmdev.reelmarkets.R;
@@ -28,6 +34,23 @@ public class PollCreationActivity extends AppCompatActivity {
     String[] pollType = {"SERIES", "SEASON", "EPISODE"};
     List<String> options;
 
+    Calendar sCalendar;
+    private TextView sDateView, sTimeView;
+    private Button sDate, sTime;
+
+    Calendar eCalendar;
+    private TextView eDateView, eTimeView;
+    private Button eDate, eTime;
+
+    static final int DATE_DIALOG_ID = 0;
+    static final int TIME_DIALOG_ID = 1;
+
+    private TextView activeDateDisplay;
+    private Calendar activeDate;
+    private TextView activeTimeDisplay;
+    private Calendar activeTime;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +61,139 @@ public class PollCreationActivity extends AppCompatActivity {
         Spinner spinner = (Spinner) findViewById(R.id.type);
         spinner.setAdapter(arrayAdapter);
         options = new ArrayList<>();
+
+        sDateView = (TextView) findViewById(R.id.tvStart);
+        sTimeView = (TextView) findViewById(R.id.tvStartTime);
+        sDate = (Button) findViewById(R.id.btSetStart);
+        sDate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showDateDialog(sDateView, sCalendar);
+            }
+        });
+
+        sTime = (Button) findViewById(R.id.btSetSTime);
+        sTime.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showTimeDialog(sTimeView, sCalendar);
+            }
+        });
+
+        sCalendar = Calendar.getInstance();
+
+        eDateView = (TextView) findViewById(R.id.tvEnd);
+        eTimeView = (TextView) findViewById(R.id.tvEndTime);
+        eDate = (Button) findViewById(R.id.btSetEnd);
+        eDate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showDateDialog(eDateView, eCalendar);
+            }
+        });
+
+        eTime = (Button) findViewById(R.id.btSetETime);
+        eTime.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showTimeDialog(eTimeView, eCalendar);
+            }
+        });
+        eCalendar = Calendar.getInstance();
+    }
+
+    public void showDateDialog(TextView dateDisplay, Calendar date) {
+        activeDateDisplay = dateDisplay;
+        activeDate = date;
+        showDialog(DATE_DIALOG_ID);
+    }
+
+    public void showTimeDialog(TextView timeDisplay, Calendar time) {
+        activeTimeDisplay = timeDisplay;
+        activeTime = time;
+        showDialog(TIME_DIALOG_ID);
+    }
+
+    private void updateDisplay(TextView dateDisplay, Calendar date) {
+        dateDisplay.setText(
+                new StringBuilder()
+                        // Month is 0 based so add 1
+                        .append(date.get(Calendar.MONTH) + 1).append("-")
+                        .append(date.get(Calendar.DAY_OF_MONTH)).append("-")
+                        .append(date.get(Calendar.YEAR)).append(" "));
+
+    }
+
+    private void updateTimeDisplay(TextView timeDisplay, Calendar time) {
+        timeDisplay.setText(
+                new StringBuilder()
+                        // Month is 0 based so add 1
+                        .append(time.get(Calendar.HOUR)).append(":")
+                        .append(time.get(Calendar.MINUTE)));
+
+    }
+
+    private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            activeDate.set(Calendar.YEAR, year);
+            activeDate.set(Calendar.MONTH, monthOfYear);
+            activeDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateDisplay(activeDateDisplay, activeDate);
+            unregisterDateDisplay();
+        }
+    };
+
+    private TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+        @Override
+        public void onTimeSet(TimePicker view, int hour, int min)
+        {
+            activeTime.set(Calendar.HOUR, hour);
+            activeTime.set(Calendar.MINUTE, min);
+            updateTimeDisplay(activeTimeDisplay, activeTime);
+            unregisterTimeDisplay();
+        }
+    };
+
+    private void unregisterDateDisplay() {
+        activeDateDisplay = null;
+        activeDate = null;
+    }
+
+    private void unregisterTimeDisplay() {
+        activeTimeDisplay = null;
+        activeTime = null;
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case DATE_DIALOG_ID:
+                return new DatePickerDialog(this, dateSetListener,
+                        activeDate.get(Calendar.YEAR),
+                        activeDate.get(Calendar.MONTH),
+                        activeDate.get(Calendar.DAY_OF_MONTH));
+            case TIME_DIALOG_ID:
+                return new TimePickerDialog(this, timeSetListener,
+                        activeTime.get(Calendar.HOUR),
+                        activeTime.get(Calendar.MINUTE),
+                        true);
+        }
+        return null;
+    }
+
+    @Override
+    protected void onPrepareDialog(int id, Dialog dialog) {
+        super.onPrepareDialog(id, dialog);
+        switch (id) {
+            case DATE_DIALOG_ID:
+                ((DatePickerDialog) dialog).updateDate(
+                        activeDate.get(Calendar.YEAR),
+                        activeDate.get(Calendar.MONTH),
+                        activeDate.get(Calendar.DAY_OF_MONTH));
+                break;
+            case TIME_DIALOG_ID:
+                ((TimePickerDialog) dialog).updateTime(
+                        activeTime.get(Calendar.HOUR),
+                        activeTime.get(Calendar.MINUTE));
+                break;
+        }
     }
 
     public void onClickCreatePoll(View v) {
@@ -45,23 +201,8 @@ public class PollCreationActivity extends AppCompatActivity {
         String pollAuthor = LoginSession.getCurrentUser().getUsername();
 
         String pollName = ((EditText) findViewById(R.id.etPollName)).getText().toString();
-        Calendar c1 = Calendar.getInstance();
-        Calendar c2 = Calendar.getInstance();
-        Date startDate = null;
-        Date endDate = null;
-        //TODO: how to handle time (hours/mins)?
-        try {
-            startDate = (new SimpleDateFormat("MM/dd/yyyy")).parse(((EditText)findViewById(R.id.etStartDate)).getText().toString());
-            c1.setTime(startDate);
-            endDate = (new SimpleDateFormat("MM/dd/yyyy")).parse(((EditText)findViewById(R.id.etEndDate)).getText().toString());
-            c2.setTime(endDate);
-        } catch (ParseException e) {
-            Toast.makeText(getApplicationContext(),
-                    "Invalid start or end date!", Toast.LENGTH_LONG).show();
-        } catch (NullPointerException e) {
-            Toast.makeText(getApplicationContext(),
-                    "Invalid start or end date!", Toast.LENGTH_LONG).show();
-        }
+        Calendar c1 = sCalendar;
+        Calendar c2 = eCalendar;
 
         Poll.PollType p = Poll.PollType.SEASON;
         int pos = ((Spinner) findViewById(R.id.type)).getSelectedItemPosition();
@@ -112,7 +253,7 @@ public class PollCreationActivity extends AppCompatActivity {
             if (!option8.equals(""))
                 options.add(option8);
 
-            Poll currentPoll = new Poll(pollName, pollName.hashCode(), pollAuthor,startDate.toString(),endDate.toString(),p, options);
+            Poll currentPoll = new Poll(pollName, pollName.hashCode(), pollAuthor,sCalendar,eCalendar, p, options);
             PollManager.addNewPoll(currentPoll);
             startActivity(new Intent(getApplicationContext(), PollActivity.class));
             finish();
