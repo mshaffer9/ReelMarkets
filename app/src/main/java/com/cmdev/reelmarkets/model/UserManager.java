@@ -14,7 +14,7 @@ public final class UserManager {
 
     private static void initMap() {
         userMap = new HashMap<>();
-        userMap.put("bob", new User("bob", "password", "bob@waters.com", "09-05-1922", User.Gender.MALE, User.AccountType.MODERATOR));
+        userMap.put("bob", new User("bob", "password", "bob@waters.com", "09-05-1922", User.Gender.MALE, User.AccountType.MOD));
         userMap.put("admin", new User("admin", "admin", "admin@admin.com", "01-01-1999", User.Gender.MALE, User.AccountType.ADMIN));
         userMap.put("resercher", new User("researcher", "science", "research@gatech.edu", "04-12-1993", User.Gender.FEMALE, User.AccountType.USER));
     }

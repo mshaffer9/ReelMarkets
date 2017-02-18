@@ -16,11 +16,19 @@ import android.widget.Toast;
 import com.cmdev.reelmarkets.R;
 import com.cmdev.reelmarkets.model.User;
 import com.cmdev.reelmarkets.model.UserManager;
+import com.cmdev.reelmarkets.util.ReelMarketsRestClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
+import org.json.JSONObject;
+
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import cz.msebera.android.httpclient.Header;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -114,8 +122,11 @@ public class RegisterActivity extends AppCompatActivity {
         String passConf = ((EditText)findViewById(R.id.etRegisterPassConf)).getText().toString();
         Calendar c = Calendar.getInstance();
         Date date = null;
+        String parsedDate = "";
         try {
             date = (new SimpleDateFormat("MM/dd/yyyy")).parse(((EditText)findViewById(R.id.etBirthday)).getText().toString());
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            parsedDate = formatter.format(date);
             c.setTime(date);
         } catch (ParseException e) {
             Toast.makeText(getApplicationContext(),
@@ -146,15 +157,59 @@ public class RegisterActivity extends AppCompatActivity {
         } else if (!passMatch) {
             Toast.makeText(getApplicationContext(),
                     "Oops! Passwords do not match.", Toast.LENGTH_LONG).show();
-        } else if (isExistingUser) {
+
+        }
+        /*else if (isExistingUser) {
                 Toast.makeText(getApplicationContext(),
                         "Username already exists. Please choose a different one.", Toast.LENGTH_LONG).show();
         }
+        */
         else {
+            String path = "userRegistration/";
+            RequestParams params = new RequestParams();
+            params.put("username", username);
+            params.put("password", pass);
+            params.put("email", email);
+            params.put("birthday", parsedDate);
+            params.put("gender", g);
+            DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+            String creation_date = df.format(new Date());
+            params.put("creation_date", creation_date);
+
+            ReelMarketsRestClient.post(path, params, new JsonHttpResponseHandler() {
+
+
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                    System.out.println("Status Code = " + statusCode);
+                    System.out.println("responseString = " + responseString);
+                    if (statusCode == 200) {
+                        if (responseString.equals("Exists")) {
+                            Toast.makeText(getApplicationContext(),
+                                    "Username already exists! Please choose a different one.", Toast.LENGTH_LONG).show();
+                        } else if (responseString.equals("Success!")) {
+                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                            finish();
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(),
+                                "Could not connect to database!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            /*
+            ** This is to access user info stored locally in UserManager.
+            *
             User newUser = new User(username, pass, email, date.toString(), g, User.AccountType.USER);
             UserManager.addNewUser(newUser);
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             finish();
+            */
         }
 
     }

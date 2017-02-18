@@ -8,7 +8,7 @@ public class User {
     public final int INITIAL_CURRENCY = 2500;
 
     public enum Gender { MALE, FEMALE, NONE };
-    public enum AccountType { USER, MODERATOR, ADMIN };
+    public enum AccountType { USER, MOD, ADMIN };
 
     public String Username;
     public String Password;
@@ -18,13 +18,29 @@ public class User {
     public Gender gender;
     public AccountType accountType;
 
-
+    /*
+    Used to register a user.
+     */
     public User(String username, String password, String email, String dob, Gender g, AccountType aT)
     {
         Username = username;
         Password = password;
         Email = email;
         Currency = INITIAL_CURRENCY;
+        DoB = dob;
+        gender = g;
+        accountType = aT;
+    }
+
+    /*
+    Used to login a user.
+     */
+    public User(String username, String email, String dob, int currency, Gender g, AccountType aT)
+    {
+        Username = username;
+        Password = "";
+        Email = email;
+        Currency = currency;
         DoB = dob;
         gender = g;
         accountType = aT;
