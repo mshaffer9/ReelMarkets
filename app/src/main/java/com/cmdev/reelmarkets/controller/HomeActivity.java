@@ -28,4 +28,8 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), PollCreationActivity.class));
     }
 
+    public void onClickSwitchToUserList(View v) {
+        startActivity(new Intent(getApplicationContext(), UserListActivity.class));
+    }
+
 }

@@ -33,7 +33,7 @@ public class UserListActivity extends AppCompatActivity{
     protected void populateDaList() {
         //this list of names should come from db, but we're using a dummy for now
         //TODO: get actual user list from db
-        String[] usernames = {"user1", "lance", "bob", "kenya", "kartik", "sam", "alice", "christina", "james", "caleigh", "gwen", "brycex3","toaster", "kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik","kartik"};
+        String[] usernames = {"user1", "lance", "bob", "kenya", "kartik", "sam", "alice", "christina", "james", "caleigh", "gwen", "brycex3","toaster", "benwyattluvr42","bradazz97","sheenthequeen","garbolarbo","j4m13","qu33ni3"};
 
         //Build Adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.user_list_item,usernames);
@@ -51,6 +51,12 @@ public class UserListActivity extends AppCompatActivity{
                 TextView daView = (TextView) viewClicked;
                 String username = daView.getText().toString();
                 //TODO: use username to find the user, ban/unban them accordingly, and make a Toast saying which happened
+                if (username.equals("kartik")) {
+                    Toast.makeText(getApplicationContext(),"kartik is now unbanned!",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            username + " is now banned!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

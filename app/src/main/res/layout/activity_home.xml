@@ -28,7 +28,7 @@
                 android:layout_height="match_parent">
 
                 <ImageButton
-                    android:layout_width="176dp"
+                    android:layout_width="112dp"
                     android:layout_height="wrap_content"
 
                     android:id="@+id/imageButton"
@@ -38,12 +38,20 @@
 
                 <Button
                     android:text="Create Poll"
-                    android:layout_width="match_parent"
+                    android:layout_width="124dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/btCreatePoll"
                     android:layout_alignParentTop="true"
                     android:layout_toEndOf="@+id/imageButton"
                     android:onClick="onClickSwitchToPollCreation" />
+
+                <Button
+                    android:text="User List"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btUserList"
+                    android:layout_weight="1"
+                    android:onClick="onClickSwitchToUserList" />
 
             </LinearLayout>
 
