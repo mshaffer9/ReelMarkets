@@ -122,8 +122,13 @@ public class PollCreationActivity extends AppCompatActivity {
 
     private void updateTimeDisplay(TextView timeDisplay, Calendar time) {
         StringBuilder setTime = new StringBuilder()
-                .append(time.get(Calendar.HOUR)).append(":")
-                .append(time.get(Calendar.MINUTE));
+                .append(time.get(Calendar.HOUR)).append(":");
+        int min = time.get(Calendar.MINUTE);
+        if (min < 10) {
+            setTime.append("0" + min);
+        } else {
+            setTime.append(min);
+        }
         int AMorPM = time.get(Calendar.AM_PM);
         if(AMorPM == 0) {
             setTime.append(" AM");
