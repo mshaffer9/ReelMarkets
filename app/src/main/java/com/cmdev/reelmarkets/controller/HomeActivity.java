@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
         Button actionB = (Button) findViewById(R.id.btAction); //setOnClickListeners
         Button comedyB = (Button) findViewById(R.id.btComedy);
         Button horrorB = (Button) findViewById(R.id.btHorror);
-        Button internatB = (Button) findViewById(R.id.btInternat);
+        Button FantasyB = (Button) findViewById(R.id.btFantasy);
     }
 
     public void onClickSwitchToProfile(View v) {
