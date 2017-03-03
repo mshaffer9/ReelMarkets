@@ -89,7 +89,8 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
 
                 <Button
                     android:layout_width="173dp"
@@ -109,7 +110,8 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
 
                 <Button
                     android:layout_width="173dp"
@@ -129,7 +131,8 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
 
                 <Button
                     android:layout_width="173dp"
@@ -149,7 +152,8 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
 
                 <Button
                     android:layout_width="173dp"
@@ -168,40 +172,44 @@
     <LinearLayout
         android:id="@+id/navBar"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="@android:color/black">
+        android:background="@android:color/black"
+        android:layout_height="50dp">
         <Button
             android:id="@+id/button1"
             android:layout_height="50dp"
             android:layout_width="100dp"
             android:layout_weight="1"
             android:background="@drawable/search"
-            android:scaleX=".6" />
+            android:scaleX=".4"
+            android:scaleY=".8" />
         <Button
             android:id="@+id/button2"
             android:layout_height="50dp"
             android:layout_width="100dp"
             android:layout_weight="1"
             android:background="@drawable/random_dice"
-            android:scaleX=".6" />
+            android:scaleX=".4"
+            android:scaleY=".8" />
         <Button
             android:id="@+id/button3"
             android:layout_height="50dp"
             android:layout_width="100dp"
             android:layout_weight="1"
             android:background="@drawable/home"
-            android:scaleX=".6" />
+            android:scaleX=".4"
+            android:scaleY=".8" />
         <Button
             android:id="@+id/button4"
             android:layout_height="50dp"
             android:layout_width="100dp"
             android:layout_weight="1"
             android:background="@drawable/create_icon"
-            android:scaleX=".6" />
+            android:scaleX=".4"
+            android:scaleY=".8" />
     </LinearLayout>
 
 </RelativeLayout>
