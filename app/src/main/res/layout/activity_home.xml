@@ -153,7 +153,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="100dp">
 
                 <Button
                     android:layout_width="173dp"
@@ -162,54 +162,68 @@
                     android:layout_height="140dp"
                     android:background="@drawable/horrorshows" />
 
-            </LinearLayout>
+                <TextView
+                    android:layout_width="173dp"
+                    android:layout_weight="1"
+                    android:layout_height="140dp"
+                    android:visibility="invisible"/>
 
+            </LinearLayout>
 
 
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/navBar"
-        android:layout_width="fill_parent"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
         android:gravity="center"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="@android:color/black"
+        android:background="#ffffff"
         android:layout_height="50dp">
-        <Button
-            android:id="@+id/button1"
-            android:layout_height="50dp"
-            android:layout_width="100dp"
-            android:layout_weight="1"
-            android:background="@drawable/search"
-            android:scaleX=".4"
-            android:scaleY=".8" />
-        <Button
-            android:id="@+id/button2"
-            android:layout_height="50dp"
-            android:layout_width="100dp"
-            android:layout_weight="1"
-            android:background="@drawable/random_dice"
-            android:scaleX=".4"
-            android:scaleY=".8" />
-        <Button
-            android:id="@+id/button3"
-            android:layout_height="50dp"
-            android:layout_width="100dp"
-            android:layout_weight="1"
-            android:background="@drawable/home"
-            android:scaleX=".4"
-            android:scaleY=".8" />
-        <Button
-            android:id="@+id/button4"
-            android:layout_height="50dp"
-            android:layout_width="100dp"
-            android:layout_weight="1"
-            android:background="@drawable/create_icon"
-            android:scaleX=".4"
-            android:scaleY=".8" />
+
+        <LinearLayout
+            android:id="@+id/navBar"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="@android:color/black"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_height="50dp"
+                android:layout_width="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/search"
+                android:scaleX=".4"
+                android:scaleY=".8" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_height="50dp"
+                android:layout_width="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/random_dice"
+                android:scaleX=".4"
+                android:scaleY=".8" />
+            <Button
+                android:id="@+id/button3"
+                android:layout_height="50dp"
+                android:layout_width="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/home"
+                android:scaleX=".4"
+                android:scaleY=".8" />
+            <Button
+                android:id="@+id/button4"
+                android:layout_height="50dp"
+                android:layout_width="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/create_icon"
+                android:scaleX=".4"
+                android:scaleY=".8" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
