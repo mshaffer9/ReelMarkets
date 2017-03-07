@@ -10,6 +10,7 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:background="#808080"
 
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -22,31 +23,6 @@
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageButton
-                    android:layout_width="176dp"
-                    android:layout_height="wrap_content"
-
-                    android:id="@+id/imageButton"
-                    android:layout_alignParentTop="true"
-                    android:onClick="onClickSwitchToProfile"
-                    android:src="@android:drawable/stat_notify_sync" />
-
-                <Button
-                    android:text="Create Poll"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btCreatePoll"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/imageButton"
-                    android:onClick="onClickSwitchToPollCreation" />
-
-            </LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -74,16 +50,16 @@
                 <Button
                     android:layout_width="173dp"
                     android:id="@+id/btAction"
+                    android:background="@drawable/actionbutton"
                     android:layout_weight="0.11"
-                    android:background="@drawable/actionshows"
-                    android:layout_height="140dp" />
+                    android:layout_height="140dp"/>
 
                 <Button
                     android:layout_width="173dp"
                     android:id="@+id/btComedy"
+                    android:background="@drawable/comedybutton"
                     android:layout_weight="1"
-                    android:layout_height="140dp"
-                    android:background="@drawable/comedyshows" />
+                    android:layout_height="140dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -95,16 +71,16 @@
                 <Button
                     android:layout_width="173dp"
                     android:id="@+id/btCrime"
+                    android:background="@drawable/crimebutton"
                     android:layout_weight="1"
-                    android:layout_height="140dp"
-                    android:background="@drawable/horrorshows" />
+                    android:layout_height="140dp" />
 
                 <Button
                     android:layout_width="173dp"
                     android:id="@+id/btDrama"
+                    android:background="@drawable/dramabutton"
                     android:layout_weight="1"
-                    android:layout_height="140dp"
-                    android:background="@drawable/internationalshows" />
+                    android:layout_height="140dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -116,37 +92,16 @@
                 <Button
                     android:layout_width="173dp"
                     android:id="@+id/btFamily"
+                    android:background="@drawable/familybutton"
                     android:layout_weight="1"
-                    android:layout_height="140dp"
-                    android:background="@drawable/horrorshows" />
+                    android:layout_height="140dp" />
 
                 <Button
                     android:layout_width="173dp"
                     android:id="@+id/btFantasy"
+                    android:background="@drawable/fantasybutton"
                     android:layout_weight="1"
-                    android:layout_height="140dp"
-                    android:background="@drawable/internationalshows" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="20dp">
-
-                <Button
-                    android:layout_width="173dp"
-                    android:id="@+id/btHorror"
-                    android:layout_weight="1"
-                    android:layout_height="140dp"
-                    android:background="@drawable/horrorshows" />
-
-                <Button
-                    android:layout_width="173dp"
-                    android:id="@+id/btReality"
-                    android:layout_weight="1"
-                    android:layout_height="140dp"
-                    android:background="@drawable/internationalshows" />
+                    android:layout_height="140dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -157,22 +112,81 @@
 
                 <Button
                     android:layout_width="173dp"
-                    android:id="@+id/btSuspense"
+                    android:id="@+id/btHorror"
+                    android:background="@drawable/horrorbutton"
                     android:layout_weight="1"
-                    android:layout_height="140dp"
-                    android:background="@drawable/horrorshows" />
+                    android:layout_height="140dp" />
 
-                <TextView
+                <Button
                     android:layout_width="173dp"
+                    android:id="@+id/btReality"
+                    android:background="@drawable/realitybutton"
                     android:layout_weight="1"
-                    android:layout_height="140dp"
-                    android:visibility="invisible"/>
-
+                    android:layout_height="140dp" />
             </LinearLayout>
-
 
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:weightSum="1">
+
+            <Button
+                android:layout_width="62dp"
+                android:layout_height="50dp"
+
+                android:id="@+id/imageButton"
+                android:layout_alignParentTop="true"
+                android:onClick="onClickSwitchToProfile"
+                android:scaleY="1.4"
+                android:background="@drawable/avatarplaceholder"/>
+
+
+            <TextView
+                android:text="kartikSuxx1994"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:id="@+id/textView10"
+                android:textColor="#ffffff"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/coin"
+                android:id="@+id/imageView9"
+                android:scaleX=".8"
+                android:scaleY=".8"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:text="1800"
+                android:textSize="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:id="@+id/tvNumCoins"
+                android:textColor="#ffc107"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -192,15 +206,16 @@
             android:layout_marginTop="5dp">
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/btHome"
                 android:layout_height="50dp"
                 android:layout_width="100dp"
                 android:layout_weight="1"
-                android:background="@drawable/search"
+                android:background="@drawable/home"
                 android:scaleX=".4"
-                android:scaleY=".8" />
+                android:scaleY=".8"
+                android:onClick="onClickSwitchToHome"/>
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btRandom"
                 android:layout_height="50dp"
                 android:layout_width="100dp"
                 android:layout_weight="1"
@@ -208,22 +223,25 @@
                 android:scaleX=".4"
                 android:scaleY=".8" />
             <Button
-                android:id="@+id/button3"
-                android:layout_height="50dp"
-                android:layout_width="100dp"
-                android:layout_weight="1"
-                android:background="@drawable/home"
-                android:scaleX=".4"
-                android:scaleY=".8" />
-            <Button
-                android:id="@+id/button4"
+                android:id="@+id/btCreatePoll"
                 android:layout_height="50dp"
                 android:layout_width="100dp"
                 android:layout_weight="1"
                 android:background="@drawable/create_icon"
                 android:scaleX=".4"
-                android:scaleY=".8" />
+                android:scaleY=".8"
+                android:onClick="onClickSwitchToPollCreation"/>
+            <Button
+                android:id="@+id/btSearch"
+                android:layout_height="50dp"
+                android:layout_width="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/search"
+                android:scaleX=".4"
+                android:scaleY=".8"
+                android:onClick="onClickSwitchToSearch"/>
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

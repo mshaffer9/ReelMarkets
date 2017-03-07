@@ -14,10 +14,16 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         Button actionB = (Button) findViewById(R.id.btAction); //setOnClickListeners
         Button comedyB = (Button) findViewById(R.id.btComedy);
+        Button crimeB = (Button) findViewById(R.id.btCrime);
+        Button dramaB = (Button) findViewById(R.id.btDrama);
+        Button familyB = (Button) findViewById(R.id.btFamily);
+        Button fantasyB = (Button) findViewById(R.id.btFantasy);
         Button horrorB = (Button) findViewById(R.id.btHorror);
-        Button FantasyB = (Button) findViewById(R.id.btFantasy);
+        Button realityB = (Button) findViewById(R.id.btReality);
+
     }
 
     public void onClickSwitchToProfile(View v) {
@@ -26,6 +32,14 @@ public class HomeActivity extends AppCompatActivity {
 
     public void onClickSwitchToPollCreation(View v) {
         startActivity(new Intent(getApplicationContext(), PollCreationActivity.class));
+    }
+
+    public void onClickSwitchToHome(View v) {
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+    }
+
+    public void onClickSwitchToSearch(View v) {
+        startActivity(new Intent(getApplicationContext(), SearchActivity.class));
     }
 
 }
