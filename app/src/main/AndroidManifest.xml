@@ -29,7 +29,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".controller.PollCreationActivity" />
         <activity android:name=".controller.PollActivity" />
-        <activity android:name=".controller.SearchActivity"></activity>
+        <activity android:name=".controller.SearchActivity" />
+        <activity android:name=".controller.TVShowPollsActivity"></activity>
     </application>
 
 </manifest>

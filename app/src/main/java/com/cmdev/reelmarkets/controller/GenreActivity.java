@@ -1,12 +1,12 @@
 package com.cmdev.reelmarkets.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cmdev.reelmarkets.R;
 import com.cmdev.reelmarkets.util.ImageAdapter;
@@ -20,15 +20,26 @@ public class GenreActivity extends AppCompatActivity {
 // Heavy images
             "http://thetvdb.com/banners/posters/262980-1.jpg",
             "http://thetvdb.com/banners/posters/257655-1.jpg",
-            "http://thetvdb.com/banners/posters/80379-1.jpg",
             "http://thetvdb.com/banners/posters/153021-1.jpg",
+            "http://thetvdb.com/banners/posters/281662-1.jpg",
+            "http://thetvdb.com/banners/posters/75340-1.jpg",
+            "http://thetvdb.com/banners/posters/76290-1.jpg",
+            "http://thetvdb.com/banners/posters/76107-1.jpg",
+            "http://thetvdb.com/banners/posters/79349-1.jpg"
     };
 
     public static final String[] TITLES = new String[] {
             "House of Cards (2013)",
             "Arrow",
-            "The Big Bang Theory",
-            "The Walking Dead"
+            "The Walking Dead",
+            "Daredevil",
+            "Prison Break",
+            "Supernatural",
+            "24",
+            "Doctor Who",
+            "Band of Brothers",
+            "Dexter"
+
     };
 
     GridView grid;
@@ -44,7 +55,7 @@ public class GenreActivity extends AppCompatActivity {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(GenreActivity.this, "" + TITLES[position], Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), TVShowPollsActivity.class));
             }
         });
     }
