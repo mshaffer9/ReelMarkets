@@ -1,8 +1,8 @@
 package com.cmdev.reelmarkets.controller;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,17 +12,85 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //TextView homeUser = (TextView) findViewById(R.id.home_user);
+        //homeUser.setText(LoginSession.getCurrentUser().getUsername());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        final Intent intent = new Intent(getApplicationContext(), GenreActivity.class);
 
+        //TODO: Change buttons to gridview
         Button actionB = (Button) findViewById(R.id.btAction); //setOnClickListeners
+        actionB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("genre", "action");
+                startActivity(intent);
+            }
+        });
+
         Button comedyB = (Button) findViewById(R.id.btComedy);
+        comedyB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("genre", "comedy");
+                startActivity(intent);
+            }
+        });
+
         Button crimeB = (Button) findViewById(R.id.btCrime);
+        crimeB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("genre", "crime");
+                startActivity(intent);
+            }
+        });
+
         Button dramaB = (Button) findViewById(R.id.btDrama);
+        dramaB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("genre", "drama");
+                startActivity(intent);
+            }
+        });
+
         Button familyB = (Button) findViewById(R.id.btFamily);
+        familyB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("genre", "family");
+                startActivity(intent);
+            }
+        });
+
         Button fantasyB = (Button) findViewById(R.id.btFantasy);
+        fantasyB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("genre", "fantasy");
+                startActivity(intent);
+            }
+        });
+
         Button horrorB = (Button) findViewById(R.id.btHorror);
+        horrorB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("genre", "horror");
+                startActivity(intent);
+            }
+        });
+
         Button realityB = (Button) findViewById(R.id.btReality);
+        realityB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("genre", "reality");
+                startActivity(intent);
+            }
+        });
+
 
     }
 

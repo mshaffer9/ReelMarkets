@@ -3,17 +3,39 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_genrename"
-        android:layout_width="match_parent"
+        android:id="@+id/genrename"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="TextView" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:text="Genre name"
+        android:textSize="20sp" />
 
-    <GridView
-        android:id="@+id/gv_shows"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tv_genrename" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="103dp"
+        android:orientation="horizontal">
+
+        <GridView
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/genrename"
+            android:gravity="center"
+            android:horizontalSpacing="4dip"
+            android:numColumns="auto_fit"
+            android:padding="4dip"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="4dip"
+
+            >
+
+        </GridView>
+    </LinearLayout>
+
 </RelativeLayout>
