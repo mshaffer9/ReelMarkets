@@ -351,52 +351,52 @@
         android:background="#ffffff">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#000000"
+            android:orientation="horizontal"
             android:weightSum="1">
 
             <Button
-                android:layout_width="62dp"
-                android:layout_height="50dp"
-
                 android:id="@+id/imageButton"
+                android:layout_width="62dp"
+
+                android:layout_height="50dp"
                 android:layout_alignParentTop="true"
+                android:background="@drawable/avatarplaceholder"
                 android:onClick="onClickSwitchToProfile"
-                android:scaleY="1.4"
-                android:background="@drawable/avatarplaceholder"/>
+                android:scaleY="1.4" />
 
 
             <TextView
-                android:text="kartikSuxx1994"
-                android:textSize="20dp"
+                android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:id="@+id/textView10"
-                android:textColor="#ffffff"/>
+                android:text="bill1994"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
 
             <ImageView
+                android:id="@+id/imageView9"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/coin"
-                android:id="@+id/imageView9"
-                android:scaleX=".8"
-                android:scaleY=".8"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp" />
+                android:background="@drawable/coin"
+                android:scaleX=".8"
+                android:scaleY=".8" />
 
             <TextView
-                android:text="1800"
-                android:textSize="24dp"
+                android:id="@+id/tvNumCoins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
-                android:id="@+id/tvNumCoins"
-                android:textColor="#ffc107"/>
+                android:text="1800"
+                android:textColor="#ffc107"
+                android:textSize="24dp" />
 
         </LinearLayout>
 
