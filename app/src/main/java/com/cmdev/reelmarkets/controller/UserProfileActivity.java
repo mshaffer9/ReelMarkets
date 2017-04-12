@@ -1,7 +1,9 @@
 package com.cmdev.reelmarkets.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
@@ -80,6 +82,18 @@ public class UserProfileActivity extends AppCompatActivity {
         listContents.put(profileHeaders.get(3), yourTitles);
         listContents.put(profileHeaders.get(4), accountInfo);
 
+    }
+
+    public void onClickSwitchToPollCreation(View v) {
+        startActivity(new Intent(getApplicationContext(), PollCreationActivity.class));
+    }
+
+    public void onClickSwitchToHome(View v) {
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+    }
+
+    public void onClickSwitchToSearch(View v) {
+        startActivity(new Intent(getApplicationContext(), SearchActivity.class));
     }
 
 }

@@ -290,4 +290,8 @@ public class PollCreationActivity extends AppCompatActivity {
                     "You've reached the max of 8 options!", Toast.LENGTH_LONG).show();
         }
     }
+
+    public void onClickSwitchToProfile(View v) {
+        startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+    }
 }
