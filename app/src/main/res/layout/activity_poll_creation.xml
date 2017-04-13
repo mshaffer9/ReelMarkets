@@ -23,8 +23,25 @@
             android:weightSum="1">
 
             <TextView
-                android:text="Title:"
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
+                android:text="Show Name:" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:hint="Enter Show Name"
+                android:inputType="textPersonName"
+                android:textSize="14sp" />
+
+            <TextView
+                android:text="Title:"
+                android:layout_marginTop="20dp"
                 android:layout_width="49dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2" />
@@ -402,59 +419,4 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="#ffffff"
-        android:layout_height="50dp">
-
-        <LinearLayout
-            android:id="@+id/navBar"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:background="@android:color/black"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
-
-            <Button
-                android:id="@+id/btHome"
-                android:layout_height="50dp"
-                android:layout_width="100dp"
-                android:layout_weight="1"
-                android:background="@drawable/home"
-                android:scaleX=".4"
-                android:scaleY=".8"
-                android:onClick="onClickSwitchToHome"/>
-            <Button
-                android:id="@+id/btRandom"
-                android:layout_height="50dp"
-                android:layout_width="100dp"
-                android:layout_weight="1"
-                android:background="@drawable/random_dice"
-                android:scaleX=".4"
-                android:scaleY=".8" />
-            <Button
-                android:id="@+id/btCreatePoll"
-                android:layout_height="50dp"
-                android:layout_width="100dp"
-                android:layout_weight="1"
-                android:background="@drawable/create_icon"
-                android:scaleX=".4"
-                android:scaleY=".8"
-                android:onClick="onClickSwitchToPollCreation"/>
-            <Button
-                android:id="@+id/btSearch"
-                android:layout_height="50dp"
-                android:layout_width="100dp"
-                android:layout_weight="1"
-                android:background="@drawable/search"
-                android:scaleX=".4"
-                android:scaleY=".8"
-                android:onClick="onClickSwitchToSearch"/>
-        </LinearLayout>
-
-    </LinearLayout>
 </RelativeLayout>
