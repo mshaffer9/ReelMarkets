@@ -81,5 +81,6 @@ public class PollActivity extends AppCompatActivity {
     public class ViewHolder {
 
         Button button;
+        TextView text;
     }
 }
