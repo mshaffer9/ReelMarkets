@@ -22,12 +22,13 @@
             android:layout_weight="0.05"
             android:text="TextView" />
 
-        <GridLayout
+        <ListView
+            android:id="@+id/lv_answer_choices"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.05">
+            android:layout_height="451dp"
+            android:orientation="horizontal">
 
-        </GridLayout>
+        </ListView>
     </LinearLayout>
 
     <LinearLayout

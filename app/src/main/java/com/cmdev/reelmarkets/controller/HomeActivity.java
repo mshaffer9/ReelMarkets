@@ -10,6 +10,7 @@ import com.cmdev.reelmarkets.R;
 
 public class HomeActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //TextView homeUser = (TextView) findViewById(R.id.home_user);
@@ -108,6 +109,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void onClickSwitchToSearch(View v) {
         startActivity(new Intent(getApplicationContext(), SearchActivity.class));
+    }
+
+    public void onClickSwitchToPoll(View v) {
+        Intent i = new Intent(getApplicationContext(), PollActivity.class);
+        startActivity(i);
     }
 
 }

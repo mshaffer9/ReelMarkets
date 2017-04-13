@@ -30,7 +30,9 @@
         <activity android:name=".controller.PollCreationActivity" />
         <activity android:name=".controller.PollActivity" />
         <activity android:name=".controller.SearchActivity" />
-        <activity android:name=".controller.TVShowPollsActivity"></activity>
+        <activity android:name=".controller.TVShowPollsActivity"/>
+        <activity android:name=".controller.BettingPopupActivity"
+            android:theme="@style/AppTheme.PopupCustom"/>
     </application>
 
 </manifest>
