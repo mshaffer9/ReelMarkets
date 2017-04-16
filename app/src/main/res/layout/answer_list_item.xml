@@ -5,6 +5,8 @@
     <Button
         android:id="@+id/bt_answer_choice"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_height="50dp"
+        android:padding="5dp"
+        android:background="@drawable/adminsectionshadowbox"
+        android:text="Button"/>
 </RelativeLayout>

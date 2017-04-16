@@ -2,6 +2,7 @@ package com.cmdev.reelmarkets.controller;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -30,7 +31,7 @@ public class PollActivity extends AppCompatActivity {
         //TODO: the database shenanigans. Gonna fake things for now.
 
         TextView question = (TextView) findViewById(R.id.tv_question);
-        question.setText("Who did this?");
+        question.setText("i am typing a lot of text to see how wrapping works ok this is fun chungo scrungus yes boy howdy i sure am a good developer amirite ladies up top love you mwah bush did 9/11 stay thirsty my friends");
         generateListContent();
         ListView answerList = (ListView) findViewById(R.id.lv_answer_choices);
         answerList.setAdapter(new MyListAdaper(this, R.layout.answer_list_item, answers));
@@ -66,6 +67,8 @@ public class PollActivity extends AppCompatActivity {
 
             //TODO: set it w the actual answer choice from mObjects
             mainViewholder.button.setText("please " + position);
+
+            //TODO: set the button background to the appropriate genre accent color?
 
             mainViewholder.button.setOnClickListener(new View.OnClickListener() {
                 @Override

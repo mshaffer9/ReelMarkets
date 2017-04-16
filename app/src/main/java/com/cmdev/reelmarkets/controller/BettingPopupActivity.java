@@ -26,14 +26,14 @@ public class BettingPopupActivity extends AppCompatActivity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width * .8),(int) (height * .5));
+        getWindow().setLayout((int)(width * .8),(int) (height * .3));
 
         final TextView text = (TextView) findViewById(R.id.tv_popup_text);
         SeekBar seekbar = (SeekBar) findViewById(R.id.seekBar);
 
         text.setText("You bet: ");
 
-        //TODO: Set this current user's coin num
+        //TODO: Set this current user's coin num - the current poll's min bet
         seekbar.setMax(2500);
 
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
