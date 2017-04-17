@@ -26,6 +26,17 @@
             android:childDivider="#e6e6e6" />
     </LinearLayout>
 
+
+    <Button
+        android:id="@+id/bt_view_user_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentEnd="true"
+        android:text="View User List"
+        android:onClick="onClickSwitchToUserList"
+        android:visibility="gone" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
@@ -33,7 +44,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="#ffffff"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout">
 
         <LinearLayout
             android:id="@+id/navBar"

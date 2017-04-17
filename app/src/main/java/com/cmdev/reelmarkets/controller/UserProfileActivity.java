@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.cmdev.reelmarkets.R;
 import com.cmdev.reelmarkets.model.LoginSession;
 import com.cmdev.reelmarkets.model.ProfileExpListAdapter;
+import com.cmdev.reelmarkets.model.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +31,12 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+        Button userListButton = (Button) findViewById(R.id.bt_view_user_list);
+
+        if (LoginSession.currentUser.accountType.equals(User.AccountType.ADMIN)) {
+            userListButton.setVisibility(View.VISIBLE);
+        }
 
 //        TextView viewHelloProfile = (TextView) findViewById(R.id.tvHelloProfile);
 //        viewHelloProfile.setText("Hi " + LoginSession.currentUser.getUsername() + "!");
@@ -94,6 +102,10 @@ public class UserProfileActivity extends AppCompatActivity {
 
     public void onClickSwitchToSearch(View v) {
         startActivity(new Intent(getApplicationContext(), SearchActivity.class));
+    }
+
+    public void onClickSwitchToUserList(View v) {
+        startActivity(new Intent(getApplicationContext(), UserListActivity.class));
     }
 
 }
