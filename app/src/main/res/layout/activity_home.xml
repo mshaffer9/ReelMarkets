@@ -10,119 +10,126 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#808080"
+        android:layout_alignParentStart="true"
 
+        android:layout_alignParentTop="true"
+        android:background="#e6e6e6"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="156dp">
+                android:layout_height="93dp"
+                android:orientation="horizontal"
+                android:paddingTop="40dp">
 
                 <TextView
-                    android:text="Genres"
+                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/textView4"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif"
-                    android:textSize="30sp"
+                    android:text="Genres"
                     android:textAlignment="center"
-                    android:paddingTop="100dp" />
+                    android:textSize="30sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="173dp"
                     android:id="@+id/btAction"
-                    android:background="@drawable/actionbutton"
-                    android:layout_weight="0.11"
-                    android:layout_height="140dp"/>
+                    android:layout_width="160dp"
+                    android:layout_height="140dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/actionbutton" />
 
                 <Button
-                    android:layout_width="173dp"
                     android:id="@+id/btComedy"
-                    android:background="@drawable/comedybutton"
+                    android:layout_width="160dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:layout_height="140dp" />
+                    android:background="@drawable/comedybutton" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="173dp"
                     android:id="@+id/btCrime"
-                    android:background="@drawable/crimebutton"
+                    android:layout_width="160dp"
+                    android:layout_height="140dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:layout_height="140dp" />
+                    android:background="@drawable/crimebutton" />
 
                 <Button
-                    android:layout_width="173dp"
                     android:id="@+id/btDrama"
-                    android:background="@drawable/dramabutton"
+                    android:layout_width="173dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:layout_height="140dp" />
+                    android:background="@drawable/dramabutton" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="173dp"
                     android:id="@+id/btFamily"
-                    android:background="@drawable/familybutton"
+                    android:layout_width="160dp"
+                    android:layout_height="140dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:layout_height="140dp" />
+                    android:background="@drawable/familybutton" />
 
                 <Button
-                    android:layout_width="173dp"
                     android:id="@+id/btFantasy"
-                    android:background="@drawable/fantasybutton"
+                    android:layout_width="173dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:layout_height="140dp" />
+                    android:background="@drawable/fantasybutton" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="100dp">
+                android:layout_marginBottom="100dp"
+                android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="173dp"
                     android:id="@+id/btHorror"
-                    android:background="@drawable/horrorbutton"
+                    android:layout_width="160dp"
+                    android:layout_height="140dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:layout_height="140dp" />
+                    android:background="@drawable/horrorbutton" />
 
                 <Button
-                    android:layout_width="173dp"
                     android:id="@+id/btReality"
-                    android:background="@drawable/realitybutton"
+                    android:layout_width="173dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:layout_height="140dp" />
+                    android:background="@drawable/realitybutton" />
             </LinearLayout>
 
         </LinearLayout>
