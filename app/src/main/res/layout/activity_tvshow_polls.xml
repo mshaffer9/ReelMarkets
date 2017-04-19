@@ -105,14 +105,14 @@
                 android:layout_marginBottom="5dp" />
 
             <TextView
-                android:text="1800"
-                android:textSize="24dp"
+                android:id="@+id/tvNumCoins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
-                android:id="@+id/tvNumCoins"
-                android:textColor="#ffc107"/>
+                android:text="1400"
+                android:textColor="#ffc107"
+                android:textSize="24dp" />
 
         </LinearLayout>
 

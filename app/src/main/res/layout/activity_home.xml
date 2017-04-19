@@ -49,7 +49,7 @@
 
                 <Button
                     android:id="@+id/btAction"
-                    android:layout_width="160dp"
+                    android:layout_width="152dp"
                     android:layout_height="140dp"
                     android:layout_marginRight="10dp"
                     android:background="@drawable/actionbutton" />
@@ -187,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
-                android:text="1800"
+                android:text="1400"
                 android:textColor="#ffc107"
                 android:textSize="24dp" />
 

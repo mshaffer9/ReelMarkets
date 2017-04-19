@@ -75,7 +75,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
         notifications.add("User John bet on your poll.");
 
-        yourBets.add("You bet 100 on Game of Thrones poll.");
+        yourBets.add("500 on Dexter");
         yourPolls.add("Silicon Valley: Will the box be successful?");
         yourTitles.add("1st in The Americans");
         accountInfo.add("Email: " + LoginSession.currentUser.getEmail());
