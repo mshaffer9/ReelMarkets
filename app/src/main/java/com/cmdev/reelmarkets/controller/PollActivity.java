@@ -2,9 +2,8 @@ package com.cmdev.reelmarkets.controller;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,27 +11,34 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import com.cmdev.reelmarkets.R;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class PollActivity extends AppCompatActivity {
 
-    private ArrayList<String> answers = new ArrayList<String>();
+    private ArrayList<String> answers;
+
+    public String questionString;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poll);
-
-        //TODO: the database shenanigans. Gonna fake things for now.
+        String poll_id = getIntent().getStringExtra("poll_id");
+        String[] ans = getIntent().getStringArrayExtra("answers");
+        String minBet = getIntent().getStringExtra("minimumBet");
+        questionString = getIntent().getStringExtra("question");
+        answers = new ArrayList<>(Arrays.asList(ans));
+                //TODO: the database shenanigans. Gonna fake things for now.
 
         TextView question = (TextView) findViewById(R.id.tv_question);
-        question.setText("i am typing a lot of text to see how wrapping works ok this is fun chungo scrungus yes boy howdy i sure am a good developer amirite ladies up top love you mwah bush did 9/11 stay thirsty my friends");
-        generateListContent();
+        question.setText(questionString);
+        //generateListContent();
         ListView answerList = (ListView) findViewById(R.id.lv_answer_choices);
         answerList.setAdapter(new MyListAdaper(this, R.layout.answer_list_item, answers));
 
@@ -66,7 +72,7 @@ public class PollActivity extends AppCompatActivity {
             mainViewholder = (PollActivity.ViewHolder) convertView.getTag();
 
             //TODO: set it w the actual answer choice from mObjects
-            mainViewholder.button.setText("please " + position);
+            mainViewholder.button.setText(answers.get(position));
 
             //TODO: set the button background to the appropriate genre accent color?
 

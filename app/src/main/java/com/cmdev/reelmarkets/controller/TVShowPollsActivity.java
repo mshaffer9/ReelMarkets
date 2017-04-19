@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -56,6 +57,8 @@ public class TVShowPollsActivity extends AppCompatActivity {
     public ArrayList<String> pollNames = new ArrayList<>();
     public ArrayList<String> bets = new ArrayList<>();
     public ArrayList<String> dates = new ArrayList<>();
+    public ArrayList<String> allQuestions = new ArrayList<>();
+    public ArrayList<ArrayList<String>> answersList = new ArrayList<>();
 
     ListView list;
 
@@ -86,6 +89,9 @@ public class TVShowPollsActivity extends AppCompatActivity {
                         bets.add(obj.getString("Minimum_Bet"));
                         dates.add(obj.getString("Expiry_Date").split("T")[0]);
                         pollIDs.add(obj.getString("PollID"));
+                        String allAnswers = obj.getString("Poll_Options");
+                        answersList.add(new ArrayList<>(Arrays.asList(allAnswers.split(","))));
+                        allQuestions.add(obj.getString("Question_Name"));
                     }
 
                     String[] poll_names = pollNames.toArray(new String[0]);
@@ -98,6 +104,9 @@ public class TVShowPollsActivity extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             intent.putExtra("poll_id", pollIDs.get(position));
+                            intent.putExtra("answers", answersList.get(position).toArray(new String[0]));
+                            intent.putExtra("minimumBet", bets.get(position));
+                            intent.putExtra("question", allQuestions.get(position));
                             startActivity(intent);
                         }
                     });

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.cmdev.reelmarkets.R;
 
@@ -17,8 +18,13 @@ public class HomeActivity extends AppCompatActivity {
         //homeUser.setText(LoginSession.getCurrentUser().getUsername());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        if (getIntent().getStringExtra("curr") != null && getIntent().getStringExtra("curr") != "") {
+            String curr = getIntent().getStringExtra("curr");
+            TextView genreName = (TextView) findViewById(R.id.tvNumCoins2);
+            int val = Integer.parseInt(genreName.toString()) - Integer.parseInt(curr);
+            genreName.setText("" + val);
+        }
         final Intent intent = new Intent(getApplicationContext(), GenreActivity.class);
-
         //TODO: Change buttons to gridview
         Button actionB = (Button) findViewById(R.id.btAction); //setOnClickListeners
         actionB.setOnClickListener(new View.OnClickListener() {

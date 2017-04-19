@@ -4,14 +4,13 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -20,13 +19,9 @@ import android.widget.Toast;
 import com.cmdev.reelmarkets.R;
 import com.cmdev.reelmarkets.model.LoginSession;
 import com.cmdev.reelmarkets.model.Poll;
-import com.cmdev.reelmarkets.model.PollManager;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class PollCreationActivity extends AppCompatActivity {
@@ -262,13 +257,14 @@ public class PollCreationActivity extends AppCompatActivity {
             if (!option8.equals(""))
                 options.add(option8);
 
-            Poll currentPoll = new Poll(pollName, pollName.hashCode(), pollAuthor,sCalendar,eCalendar, p, options);
-            PollManager.addNewPoll(currentPoll);
-            startActivity(new Intent(getApplicationContext(), PollActivity.class));
-            finish();
+          //  Poll currentPoll = new Poll(pollName, pollName.hashCode(), pollAuthor,sCalendar,eCalendar, p, options);
+         //   PollManager.addNewPoll(currentPoll);
+          //  startActivity(new Intent(getApplicationContext(), PollActivity.class));
+          //  finish();
             Toast.makeText(getApplicationContext(),
                     "Poll added successfully!", Toast.LENGTH_LONG).show();
         }
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
     }
 
     public void onClickAddOptions(View v) {

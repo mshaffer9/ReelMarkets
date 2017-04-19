@@ -1,5 +1,6 @@
 package com.cmdev.reelmarkets.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -7,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cmdev.reelmarkets.R;
 
 public class BettingPopupActivity extends AppCompatActivity {
 
     int progress = 50;
-
+    int value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +52,7 @@ public class BettingPopupActivity extends AppCompatActivity {
             With time, a custom seekbar class could be made.*/
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                int value = progress + MIN;
+                value = progress + MIN;
                 text.setText("You bet: " + value);
             }
         });
@@ -69,6 +71,12 @@ public class BettingPopupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO: Add bet to Poll's pool, subtract $ from user
+
+                final Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                intent.putExtra("curr", value);
+                Toast.makeText(getApplicationContext(),
+                        "You bet " + value + " on the poll.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 finish();
             }
         });

@@ -74,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                         User user = new User(username, email, dob, currency, g, aT);
                         LoginSession.currentUser = user;
                         startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+
                         finish();
                     } catch (JSONException e) {
                         e.printStackTrace();

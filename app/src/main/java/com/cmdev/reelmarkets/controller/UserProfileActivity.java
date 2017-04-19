@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.TextView;
 
 import com.cmdev.reelmarkets.R;
 import com.cmdev.reelmarkets.model.LoginSession;
@@ -74,11 +73,10 @@ public class UserProfileActivity extends AppCompatActivity {
         List<String> yourTitles = new ArrayList<>();
         List<String> accountInfo = new ArrayList<>();
 
-        notifications.add("User betted on your poll");
-        notifications.add("You won 100 coins on a poll");
+        notifications.add("User John bet on your poll.");
 
-        yourBets.add("Poll name 123");
-        yourPolls.add("Poll name 234");
+        yourBets.add("You bet 100 on Game of Thrones poll.");
+        yourPolls.add("Silicon Valley: Will the box be successful?");
         yourTitles.add("1st in The Americans");
         accountInfo.add("Email: " + LoginSession.currentUser.getEmail());
         accountInfo.add("Date of Birth: " + LoginSession.currentUser.getDoB());
