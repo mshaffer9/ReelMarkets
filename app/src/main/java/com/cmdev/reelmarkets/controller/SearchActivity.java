@@ -73,4 +73,25 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
+    public void onClickSwitchToProfile(View v) {
+        startActivity(new Intent(getApplicationContext(), UserProfileActivity.class));
+    }
+
+    public void onClickSwitchToPollCreation(View v) {
+        startActivity(new Intent(getApplicationContext(), PollCreationActivity.class));
+    }
+
+    public void onClickSwitchToHome(View v) {
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+    }
+
+    public void onClickSwitchToSearch(View v) {
+        startActivity(new Intent(getApplicationContext(), SearchActivity.class));
+    }
+
+    public void onClickSwitchToPoll(View v) {
+        Intent i = new Intent(getApplicationContext(), PollActivity.class);
+        startActivity(i);
+    }
+
 }
