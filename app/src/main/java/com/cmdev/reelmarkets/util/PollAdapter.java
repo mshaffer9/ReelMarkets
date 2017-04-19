@@ -16,16 +16,17 @@ import com.cmdev.reelmarkets.R;
 public class PollAdapter extends BaseAdapter {
     private String[] POLL_NAMES;
     private String[] NUMBERS;
-
+    private String[] DATES;
     private LayoutInflater inflater;
 
     Context c;
 
-    public PollAdapter(Context context, String[] URLS, String[] show_titles) {
+    public PollAdapter(Context context, String[] URLS, String[] show_titles, String[] date) {
         POLL_NAMES = URLS;
         inflater = LayoutInflater.from(context);
         c = context;
         NUMBERS = show_titles;
+        DATES = date;
     }
 
     @Override
@@ -55,9 +56,10 @@ public class PollAdapter extends BaseAdapter {
 
         TextView pollName = (TextView) view.findViewById(R.id.poll_name);
         TextView moneyBet = (TextView) view.findViewById(R.id.money_bet);
-
+        TextView expiration = (TextView) view.findViewById(R.id.tvTimeLeft);
         pollName.setText(POLL_NAMES[position]);
         moneyBet.setText(NUMBERS[position]);
+        expiration.setText(DATES[position]);
         return view;
     }
 }
